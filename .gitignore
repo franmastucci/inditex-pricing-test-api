@@ -1,0 +1,49 @@
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Maven
+target/
+
+# Compiled bytecode
+*.class
+
+# Logs
+*.log
+log/
+
+# IOS
+.DS_Store
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Visual Studio Code
+.vscode/
+
+# Spring Boot
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Lombok
+*.iml
+*.ipr
+*.iws
+*.bak/
+*.out
+*.recommenders/
+
+# Package Files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Local configuration file (application.properties)
+/src/main/resources/application.properties
