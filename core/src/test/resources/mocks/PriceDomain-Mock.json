@@ -1,0 +1,30 @@
+{
+  "priceId": 4,
+  "brandDomain": {
+    "brandId": 1,
+    "name": {
+      "value": "ZARA"
+    },
+    "country": "ESP",
+    "foundingYear": "1975-01-01"
+  },
+  "currencyDomain": {
+    "currId": 1,
+    "code": 978,
+    "name": {
+      "value": "EUR"
+    }
+  },
+  "productDomain": {
+    "productId": 35455,
+    "name": {
+      "value": "Mocasines deportivos mujer"
+    },
+    "description": "La combinación de materiales de alta calidad y un diseño moderno agrega un toque de elegancia a los atuendos deportivos y casuales"
+  },
+  "startDate": "2020-06-15T16:00:00Z",
+  "endDate": "2020-12-31T23:59:59Z",
+  "priority": 1,
+  "priceValue": 38.95
+}
+

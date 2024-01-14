@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>inditex-test-application-web</artifactId>
+	<version>0.0.1</version>
+	<name>web</name>
+
+	<parent>
+		<groupId>com.inditex</groupId>
+		<artifactId>inditex-test-application</artifactId>
+		<version>0.0.1</version>
+	</parent>
+	
+	<properties>
+		<java.version>11</java.version>
+	</properties>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.inditex</groupId>
+			<artifactId>inditex-test-application-core</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.inditex</groupId>
+			<artifactId>inditex-test-application-infra</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>local</id>
+			<properties>
+				<activatedProperties>local</activatedProperties>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+	</profiles>
+
+</project>
