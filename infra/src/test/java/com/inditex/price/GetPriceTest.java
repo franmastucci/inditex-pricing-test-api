@@ -15,9 +15,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 public class GetPriceTest  {
-	
-    @Autowired
-    PriceJPARepository priceJPARepository;
 
     @Autowired
     PriceRepository priceRepository;

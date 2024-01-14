@@ -14,7 +14,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 import static com.inditex.utils.WebConstants.PRICE_REQUEST_MAPPING_PATH;
-import static org.junit.Assert.assertEquals;
+
 
 
 @SpringBootTest
