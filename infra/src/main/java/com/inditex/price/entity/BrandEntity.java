@@ -31,12 +31,4 @@ public class BrandEntity {
     @Column(name = "FOUNDING_YEAR")
     private Date foundingYear;
 
-    public BrandDomain toDomain() {
-        return BrandDomain.builder(this.getBrandId())
-                .name(new Name(this.getName()))
-                .country(this.getCountry())
-                .foundingYear(this.getFoundingYear())
-                .build();
-    }
-
 }

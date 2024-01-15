@@ -2,6 +2,7 @@ package com.inditex.price.adapter;
 
 import com.inditex.price.domain.PriceDomain;
 import com.inditex.price.domain.PriceRepository;
+import com.inditex.price.mapper.PriceInfraMapper;
 import com.inditex.price.repository.PriceJPARepository;
 import com.inditex.shared.exception.InfraException;
 import lombok.extern.log4j.Log4j2;
@@ -35,7 +36,7 @@ public class PriceRepositoryImpl implements PriceRepository {
             var price = priceJPARepository.findMaxPriorityPrice(brandName, productId, appDate);
 
             if (price.isPresent())
-                return price.get().toDomain();
+                return PriceInfraMapper.INSTANCE.map(price.get());
 
         } catch (DataIntegrityViolationException e) {
             log.error(PRICE_ERROR_EXCEPTION);

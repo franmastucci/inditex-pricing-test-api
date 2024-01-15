@@ -46,19 +46,5 @@ public class PriceEntity {
     @Column(name = "PRICE_VALUE")
     private BigDecimal priceValue;
 
-    public PriceDomain toDomain() {
-        return PriceDomain.builder(
-                        this.getPriceId(),
-                        this.getBrandEntity().toDomain(),
-                        this.getCurrencyEntity().toDomain(),
-                        this.getProductEntity().toDomain()
-                )
-                .startDate(this.getStartDate())
-                .endDate(this.getEndDate())
-                .priority(this.getPriority())
-                .priceValue(this.getPriceValue())
-                .build();
-    }
-
 }
 

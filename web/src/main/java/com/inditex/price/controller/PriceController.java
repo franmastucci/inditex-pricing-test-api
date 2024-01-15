@@ -2,6 +2,7 @@ package com.inditex.price.controller;
 
 import com.inditex.price.application.GetPrice;
 import com.inditex.price.dto.PriceResponse;
+import com.inditex.price.mapper.PriceMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -52,7 +53,8 @@ public class PriceController {
 		var price = getPrice.getPrice(date,product,brand);
 
 		if (null != price) {
-			var priceResponse =  PriceResponse.ToPriceResponse(price, date) ;
+
+			var priceResponse = PriceMapper.INSTANCE.map(price);
 			log.info(PRICE_LOG_CONTROLLER_RESPONSE + priceResponse.toString());
 			return ResponseEntity.ok().body(priceResponse);
 		}

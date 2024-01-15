@@ -41,17 +41,4 @@ public class PriceResponse {
     /** The finalPrice. */
     private BigDecimal finalPrice;
 
-
-    public static PriceResponse ToPriceResponse(PriceDomain price, Timestamp date) {
-        return PriceResponse.builder()
-                .brandId(price.getBrandDomain().getBrandId())
-                .brandName(price.getBrandDomain().getName().getValue())
-                .pruductId(price.getProductDomain().getProductId())
-                .productName(price.getProductDomain().getName().getValue())
-                .priceId(price.getPriceId())
-                .appDate(date)
-                .finalPrice(price.getPriceValue())
-                .build();
-    }
-
 }

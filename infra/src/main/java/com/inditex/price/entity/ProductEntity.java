@@ -26,12 +26,5 @@ public class ProductEntity {
     @Column(name = "DESCRIPTION")
     private String description;
 
-    public ProductDomain toDomain( ) {
-        return ProductDomain.builder(this.getProductId())
-                .description(this.getDescription())
-                .name(new Name(this.getName()))
-                .build();
-    }
-
 }
 

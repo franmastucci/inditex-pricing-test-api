@@ -27,12 +27,5 @@ public class CurrencyEntity {
     @Column(name = "NAME")
     private String name;
 
-    public CurrencyDomain toDomain() {
-        return CurrencyDomain.builder(this.getCurrId())
-                .name(new Name(this.getName()))
-                .code(this.getCode())
-                .build();
-    }
-
 }
 
