@@ -9,9 +9,9 @@ import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 @Mapper
-public interface PriceMapper {
+public interface PriceWebMapper {
 
-    PriceMapper INSTANCE = Mappers.getMapper(PriceMapper.class);
+    PriceWebMapper INSTANCE = Mappers.getMapper(PriceWebMapper.class);
 
 
     @Mapping(source = "priceId", target = "priceId")
