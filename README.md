@@ -10,7 +10,7 @@
 
 <b>The Inditex Pricing Test API is a microservice designed using the Hexagonal Architecture, tailored for the specific needs of the Spanish company Inditex. This microservice aims to fulfill the technical assessment requirements within the context of the selection process.
 
-The architecture of the Inditex Pricing Test API is built upon archetypes, patterns, and practices that the developer has accumulated throughout their professional journey, working with differents companies. Therefore, both the architecture itself and the underlying semantics represent just one approach to harnessing the benefits of a Hexagonal Architecture.*
+The architecture of the Inditex Pricing Test API is built upon archetypes, patterns, and practices that the developer has accumulated throughout their professional journey, working with differents companies. Therefore, both the architecture itself and the underlying semantics represent just one approach to harnessing the benefits of a Hexagonal Architecture.
 </b>
 <br>
 
@@ -56,17 +56,24 @@ mvn clean install
 cd web
 mvn spring-boot:run
 ```
-<br>
 
 ## Running Tests
 
 ```bash
 mvn test
 ```
-<br>
 
 
+## Data Model & Storage
+
+#### **[H2 Console access](http://localhost:8080/h2-console)**.
+
+
+![](web/etc/images/prices_model.png)
 ## API Endpoints
+#### [Swagger access](http://localhost:8080/swagger-ui/index.html#/).
+
+
 | Path                                                        | Type | Description                                                 |
 |:------------------------------------------------------------|:-----|:------------------------------------------------------------|
 | /prices?product={product_id}&brand={brand_name}&date={date} | GET  | Retrieves prices for a specific product and brand at a given date and time |
@@ -78,14 +85,15 @@ curl --location 'http://localhost:8080/prices?product=35455&brand=ZARA&date=2020
 <br>
 
 
-## ER Diagram
 
-![](web/etc/images/prices_model.png)
 
-<br>
+
+
+
 
 ## Technology
 * **Platform:** Java 11
 * **Project type:** Microservice
 * **Spring Boot version:** 2.7.16
+
   <br><br>

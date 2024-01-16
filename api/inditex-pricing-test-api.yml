@@ -1,0 +1,77 @@
+---
+swagger: '2.0'
+info:
+  description: ApPI for search prices
+  version: '1.0'
+  title: inditex pricing test api
+host: localhost:8090
+basePath: "/"
+tags:
+  - name: price-controller
+    description: Price Controller
+paths:
+  "/prices":
+    get:
+      tags:
+        - price-controller
+      summary: find the max priority price
+      operationId: getPriceUsingGET
+      produces:
+        - "*/*"
+      parameters:
+        - name: brand
+          in: query
+          description: brand
+          required: true
+          type: string
+          x-example: ZARA
+        - name: date
+          in: query
+          description: date
+          required: true
+          type: string
+          x-example: '2020-06-14 21:00:00'
+        - name: product
+          in: query
+          description: product
+          required: true
+          type: integer
+          format: int64
+          x-example: 35455
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/PriceResponse"
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+definitions:
+  PriceResponse:
+    type: object
+    properties:
+      brandId:
+        type: integer
+        format: int64
+      brandName:
+        type: string
+      endDate:
+        type: string
+        format: date-time
+      finalPrice:
+        type: number
+      priceId:
+        type: integer
+        format: int64
+      productName:
+        type: string
+      pruductId:
+        type: integer
+        format: int64
+      startDate:
+        type: string
+        format: date-time
+    title: PriceResponse

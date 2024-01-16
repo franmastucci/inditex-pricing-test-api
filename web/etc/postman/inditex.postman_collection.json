@@ -13,16 +13,21 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/",
+					"raw": "http://localhost:8080/prices?date=2020-06-14 10:00:00&product=35455&brand=ZARA",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						""
+						"prices"
 					],
 					"query": [
+						{
+							"key": "date",
+							"value": "2020-06-14 10:00:00",
+							"description": "test 1"
+						},
 						{
 							"key": "date",
 							"value": "2020-06-14 16:00:00",
@@ -46,6 +51,14 @@
 							"value": "2020-06-16 21:00:00",
 							"description": "Test 5",
 							"disabled": true
+						},
+						{
+							"key": "product",
+							"value": "35455"
+						},
+						{
+							"key": "brand",
+							"value": "ZARA"
 						}
 					]
 				}

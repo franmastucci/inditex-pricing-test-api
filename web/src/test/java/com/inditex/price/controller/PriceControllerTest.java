@@ -16,7 +16,6 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 import static com.inditex.utils.WebConstants.PRICE_REQUEST_MAPPING_PATH;
 
 
-
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles("test")

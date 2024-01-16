@@ -25,7 +25,7 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("inditex pricing test api")
-                .description("ApPI for search prices")
+                .description("API for search prices")
                 .version("1.0")
                 .build();
     }
