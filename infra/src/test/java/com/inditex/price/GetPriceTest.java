@@ -39,7 +39,6 @@ public class GetPriceTest  {
 
         assertEquals(priceDomainResponse.getCurrencyDomain().getName().getValue(), "EUR");
 
-
     }
 
 }

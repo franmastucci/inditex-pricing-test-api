@@ -1,18 +1,19 @@
 package com.inditex.price.dto;
 
-import com.inditex.price.domain.PriceDomain;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.sql.Timestamp;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Schema(name = "PriceResponse", description = "PriceResponse data")
 
 /**
  * The class PriceResponse.
@@ -35,8 +36,11 @@ public class PriceResponse {
     /** The priceId. */
     private Long priceId;
 
-    /** The appDate. */
-    private Timestamp appDate;
+    /** The startDate. */
+    private Date startDate;
+
+    /** The endDate. */
+    private Date endDate;
 
     /** The finalPrice. */
     private BigDecimal finalPrice;

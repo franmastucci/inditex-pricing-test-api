@@ -44,7 +44,7 @@ public class GetPrice {
         try {
             log.info(PRICE_LOG_USE_CASE);
             var priceDomain =  priceRepository.findMaxPriorityPrice(brand, product, date);
-            priceDomain.validate();
+            if (null != priceDomain) { priceDomain.validate();}
             return priceDomain;
 
         } catch(IllegalStateException e) {

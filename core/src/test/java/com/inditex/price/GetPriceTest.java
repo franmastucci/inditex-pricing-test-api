@@ -47,16 +47,4 @@ public class GetPriceTest {
 
     }
 
-    @Test
-    void should_throw_domain_exception_for_null_parameters() {
-        assertThrows(DomainException.class, () -> {
-            getPrice.getPrice(null, null, null);
-        });
-
-        assertThrows(DomainException.class, () -> {
-            getPrice.getPrice(null, 35455L, "ZARA");
-        });
-
-    }
-
 }

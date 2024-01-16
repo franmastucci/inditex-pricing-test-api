@@ -10,7 +10,7 @@
 
 <b>The Inditex Pricing Test API is a microservice designed using the Hexagonal Architecture, tailored for the specific needs of the Spanish company Inditex. This microservice aims to fulfill the technical assessment requirements within the context of the selection process.
 
-The architecture of the Inditex Pricing Test API is built upon archetypes, patterns, and practices that the developer has accumulated throughout their professional journey, working with various companies. Therefore, both the architecture itself and the underlying semantics represent just one approach to harnessing the benefits of a Hexagonal Architecture.*
+The architecture of the Inditex Pricing Test API is built upon archetypes, patterns, and practices that the developer has accumulated throughout their professional journey, working with differents companies. Therefore, both the architecture itself and the underlying semantics represent just one approach to harnessing the benefits of a Hexagonal Architecture.*
 </b>
 <br>
 
@@ -20,21 +20,16 @@ The microservice is structured into three main components:
 
 ### 1. Core:
 
-The Core component encapsulates the application's domain. It implements the business logic and exposes ports for interaction with other components. In this component, the essence of the application's domain is captured.### Infrastructure Requirements:
+The Core component encapsulates the application's domain. It implements the business logic and exposes ports for interaction with other components. In this component, the essence of the application's domain is captured.
 
-Considering the infrastructure demands, the microservice did not pose an intricate set of requirements. The simplicity of a layered architecture accommodated the infrastructure needs without introducing unnecessary complexity.
+
 ### 2. Infra:
 
-The Infra component is responsible for implementing the infrastructure while adhering to the definitions provided by the Core component. It translates the high-level abstractions of the Core into concrete implementations, managing data access, and external interactions.### Advantages of Layered Architecture:
+The Infra component is responsible for implementing the infrastructure while adhering to the definitions provided by the Core component. It translates the high-level abstractions of the Core into concrete implementations, managing data access, and external interactions.
 
 ### 3. Web:
-The Web component serves as the entry point for external interactions. It exposes web resources that allow clients to invoke the services provided by the microservice. This component acts as the interface between the microservice and external systems.#### Ease of Maintenance: 
-The hierarchical structure simplifies maintenance tasks, making it easier to update, extend, or modify specific layers without affecting others.
+The Web component serves as the entry point for external interactions. It exposes web resources that allow clients to invoke the services provided by the microservice. This component acts as the interface between the microservice and external systems
 
-## Testing 
-Layered architectures are Unit and integration tests have been conducted for each component using JUnit. This ensures the reliability and correctness of each individual part of the microservice.
-
-Additionally, the project includes Postman collections for end-to-end testing, providing a convenient way to test the microservice's functionality as a whole. scalable, allowing for the independent scaling of individual layers based on demand.
 
 ## Why Hexagonal Architecture?
 The choice of a Hexagonal Architecture for the Inditex Pricing Test API is driven by several considerations:

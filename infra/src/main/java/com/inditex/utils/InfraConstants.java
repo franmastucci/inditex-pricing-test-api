@@ -24,7 +24,7 @@ public class InfraConstants {
     /**
      * The Constant PRICE_LOG_ADAPTER_CALLING_REPOSITORY_EXCEPTION.
      */
-    public static final String PRICE_ERROR_EXCEPTION = INFRA_TRACE + "Fail retrieving data from DB";
+    public static final String PRICE_ERROR_EXCEPTION = "Fail retrieving data from DB";
 
 
 }

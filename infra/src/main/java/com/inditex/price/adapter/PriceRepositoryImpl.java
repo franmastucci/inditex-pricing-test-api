@@ -32,19 +32,15 @@ public class PriceRepositoryImpl implements PriceRepository {
     public PriceDomain findMaxPriorityPrice(String brandName, Long productId, Timestamp appDate) {
 
         try {
-            log.info(PRICE_LOG_ADAPTER_CALLING_REPOSITORY);
+            log.debug(PRICE_LOG_ADAPTER_CALLING_REPOSITORY);
             var price = priceJPARepository.findMaxPriorityPrice(brandName, productId, appDate);
 
             if (price.isPresent())
                 return PriceInfraMapper.INSTANCE.map(price.get());
 
-        } catch (DataIntegrityViolationException e) {
-            log.error(PRICE_ERROR_EXCEPTION);
-            throw new InfraException(e.getMessage());
-
         } catch (Exception e) {
             log.error(PRICE_ERROR_EXCEPTION);
-            throw new InfraException(PRICE_ERROR_EXCEPTION+ e.getMessage());
+            throw new InfraException(PRICE_ERROR_EXCEPTION+ e.getMessage(), "500");
         }
 
         return null;
