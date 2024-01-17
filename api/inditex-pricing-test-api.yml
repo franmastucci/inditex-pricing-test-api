@@ -1,7 +1,7 @@
 ---
 swagger: '2.0'
 info:
-  description: ApPI for search prices
+  description: API for search prices
   version: '1.0'
   title: inditex pricing test api
 host: localhost:8090
