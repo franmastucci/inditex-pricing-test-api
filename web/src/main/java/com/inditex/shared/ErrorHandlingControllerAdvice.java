@@ -3,12 +3,12 @@ package com.inditex.shared;
 import com.inditex.price.dto.error.ErrorListMessageDTO;
 import com.inditex.price.dto.error.ErrorMessageDTO;
 import com.inditex.shared.exception.DomainException;
-import com.inditex.shared.exception.InternalServerException;
 import com.inditex.shared.exception.WebException;
 
 import com.inditex.shared.exception.InfraException;
 import org.springframework.http.HttpStatus;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,22 +25,24 @@ class ErrorHandlingControllerAdvice {
 
 
     @ExceptionHandler({InfraException.class, WebException.class})
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
-    ErrorListMessageDTO onComponentsExceptions(RuntimeException e) throws Exception {
+    public ResponseEntity<ErrorListMessageDTO> onComponentsExceptions(RuntimeException e) throws Exception {
 
         if (e instanceof InfraException) {
-            if(((InfraException) e).getCode().equals("500"))
-                throw new InternalServerException(e.getMessage());
+            if (((InfraException) e).getCode().equals("500")) {
+                var errors = new ErrorListMessageDTO();
+                errors.setErrors(Collections.singletonList(new ErrorMessageDTO("500", "SERVER ERROR", null, e.getMessage())));
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errors);
+            }
         }
 
         var errors = new ErrorListMessageDTO();
-        errors.setErrors(Collections.singletonList(new ErrorMessageDTO("400","BAD REQUEST", null,e.getMessage())));
-        return  errors;
+        errors.setErrors(Collections.singletonList(new ErrorMessageDTO("400", "BAD REQUEST", null, e.getMessage())));
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
     }
 
-
-    @ExceptionHandler({InternalServerException.class, DomainException.class, })
+    @ExceptionHandler({DomainException.class, })
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseBody
     ErrorListMessageDTO onInternalServerException(RuntimeException e) throws Exception {

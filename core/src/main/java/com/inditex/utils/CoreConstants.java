@@ -23,7 +23,7 @@ public class CoreConstants {
     /**
      * The Constant PRICE_ERROR_EXCEPTION.
      */
-    public static final String PRICE_ERROR_EXCEPTION = CORE_TRACE + "Fail retrieving data from Domain";
+    public static final String PRICE_ERROR_EXCEPTION = "Fail retrieving data.";
 
     /**
      * The Constant NAME_REGEX_VALIDATION.

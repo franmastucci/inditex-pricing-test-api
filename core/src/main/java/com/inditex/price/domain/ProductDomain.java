@@ -66,6 +66,7 @@ public class ProductDomain {
                 ", description='" + description + '\'' +
                 '}';
     }
+
 }
 
 

@@ -10,6 +10,43 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class WebConstants {
 
+
+    /**
+     * The Constant DATE_PARAM.
+     */
+    public static final String DATE_PARAM = "date" ;
+
+
+    /**
+     * The Constant BRAND_PARAM.
+     */
+    public static final String BRAND_PARAM = "brand" ;
+
+
+    /**
+     * The Constant PRODUCT_PARAM.
+     */
+    public static final String PRODUCT_PARAM = "product" ;
+
+
+
+
+    /**
+     * The Constant DATE_EXAMPLE.
+     */
+    public static final String PRICE_DATE_EXAMPLE = "2020-06-14 21:00:00" ;
+
+
+    /**
+     * The Constant PRODUCT_EXAMPLE.
+     */
+    public static final String PRICE_PRODUCT_EXAMPLE = "35455" ;
+
+    /**
+     * The Constant BRAND_EXAMPLE.
+     */
+    public static final String PRICE_BRAND_EXAMPLE =   "ZARA" ;
+
     /**
      * The Constant WEB_TRACE.
      */

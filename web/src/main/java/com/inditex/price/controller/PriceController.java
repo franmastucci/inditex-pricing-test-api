@@ -49,12 +49,12 @@ public class PriceController {
 
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<PriceResponse> getPrice(
-			@Parameter(description = "date", required = true, example = "2020-06-14 21:00:00")
-			@RequestParam("date") Timestamp date,
-			@Parameter(description = "product", required = true, example = "35455")
-			@RequestParam("product") Long product,
-			@Parameter(description = "brand", required = true, example = "ZARA")
-			@RequestParam("brand") String brand ) {
+			@Parameter(description = DATE_PARAM, required = true, example = PRICE_DATE_EXAMPLE)
+			@RequestParam(DATE_PARAM) Timestamp date,
+			@Parameter(description = PRODUCT_PARAM, required = true, example = PRICE_PRODUCT_EXAMPLE)
+			@RequestParam(PRODUCT_PARAM) Long product,
+			@Parameter(description = BRAND_PARAM, required = true, example = PRICE_BRAND_EXAMPLE)
+			@RequestParam(BRAND_PARAM) String brand ) {
 
 		log.info(PRICE_LOG_CONTROLLER ,date, brand, product);
 		var price = getPrice.getPrice(date,product,brand);
