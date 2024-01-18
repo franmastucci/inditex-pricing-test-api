@@ -2,7 +2,6 @@ package com.inditex.price;
 
 import com.inditex.price.application.GetPrice;
 import com.inditex.price.domain.PriceRepository;
-import com.inditex.price.repository.PriceJPARepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
