@@ -1,5 +1,8 @@
 package com.inditex.config;
 
+import com.fasterxml.classmate.TypeResolver;
+import com.inditex.price.dto.error.ErrorListMessageDTO;
+import com.inditex.price.dto.error.ErrorMessageDTO;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -13,8 +16,12 @@ import springfox.documentation.spring.web.plugins.Docket;
 public class SwaggerConfig {
 
     @Bean
-    public Docket api() {
+    public Docket api(TypeResolver typeResolver) {
         return new Docket(DocumentationType.SWAGGER_2)
+                .additionalModels(
+                        typeResolver.resolve(ErrorMessageDTO.class),
+                        typeResolver.resolve(ErrorListMessageDTO.class)
+                )
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.inditex"))
                 .paths(PathSelectors.any())

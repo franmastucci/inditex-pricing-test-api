@@ -21,7 +21,7 @@ public interface PriceWebMapper {
     @Mapping(source = "productDomain", target = "productName")
     @Mapping(source = "startDate", target = "startDate")
     @Mapping(source = "endDate", target = "endDate")
-    @Mapping(source = "priceValue", target = "finalPrice")
+    @Mapping(source = "priceValue", target = "priceValue")
     PriceResponse map(PriceDomain priceDomain);
 
     default Long mapBrandId(BrandDomain brandDomain) {

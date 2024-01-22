@@ -2,9 +2,13 @@ package com.inditex.price.controller;
 
 import com.inditex.price.application.GetPrice;
 import com.inditex.price.dto.PriceResponse;
+import com.inditex.price.dto.error.ErrorListMessageDTO;
 import com.inditex.price.mapper.PriceWebMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -45,7 +49,17 @@ public class PriceController {
 
 	@GetMapping
 	@Operation(summary = "find the max priority price")
-	@ApiResponses
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = HTTP_CODE_OK, description = "Class found",
+					content = @Content(schema = @Schema(implementation = PriceResponse.class))),
+			@ApiResponse(responseCode = HTTP_CODE_NO_CONTENT, description = "No content", content = @Content()),
+			@ApiResponse(responseCode = HTTP_CODE_BAD_REQUEST, description = "Bad Request. Class is not correct.",
+					content = @Content(schema = @Schema(implementation = ErrorListMessageDTO.class))),
+			@ApiResponse(responseCode = HTTP_CODE_NOT_FOUND, description = "Class not found",
+					content = @Content(schema = @Schema(implementation = ErrorListMessageDTO.class))),
+			@ApiResponse(responseCode = HTTP_CODE_INTERNAL_SERVER_ERROR, description = "An exception occurred",
+					content = @Content(schema = @Schema(implementation = ErrorListMessageDTO.class)))
+	})
 
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<PriceResponse> getPrice(

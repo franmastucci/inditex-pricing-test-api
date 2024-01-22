@@ -47,7 +47,7 @@ public class PriceControllerTest extends AbstractContainerBaseTest {
                         .param("product", String.valueOf(productId))
                         .param("brand", brand))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.finalPrice",
+                .andExpect(MockMvcResultMatchers.jsonPath("$.priceValue",
                         Matchers.closeTo(35.50, 0.01)));
     }
 
@@ -59,7 +59,7 @@ public class PriceControllerTest extends AbstractContainerBaseTest {
                         .param("product", String.valueOf(productId))
                         .param("brand", brand))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.finalPrice",
+                .andExpect(MockMvcResultMatchers.jsonPath("$.priceValue",
                         Matchers.closeTo(25.45, 0.01)));
     }
 
@@ -71,7 +71,7 @@ public class PriceControllerTest extends AbstractContainerBaseTest {
                         .param("product", String.valueOf(productId))
                         .param("brand", brand))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.finalPrice",
+                .andExpect(MockMvcResultMatchers.jsonPath("$.priceValue",
                         Matchers.closeTo(35.50, 0.01)));
     }
 
@@ -83,7 +83,7 @@ public class PriceControllerTest extends AbstractContainerBaseTest {
                         .param("product", String.valueOf(productId))
                         .param("brand", brand))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.finalPrice",
+                .andExpect(MockMvcResultMatchers.jsonPath("$.priceValue",
                         Matchers.closeTo(30.50, 0.01)));
     }
 
@@ -95,7 +95,7 @@ public class PriceControllerTest extends AbstractContainerBaseTest {
                         .param("product", String.valueOf(productId))
                         .param("brand", brand))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.finalPrice",
+                .andExpect(MockMvcResultMatchers.jsonPath("$.priceValue",
                         Matchers.closeTo(38.95, 0.01)));
     }
 

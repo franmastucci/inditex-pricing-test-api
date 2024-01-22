@@ -1,9 +1,9 @@
 package com.inditex.price;
 
 import com.inditex.price.application.GetPrice;
+import com.inditex.price.application.impl.GetPriceImpl;
 import com.inditex.price.domain.PriceDomain;
 import com.inditex.price.domain.PriceRepository;
-import com.inditex.shared.exception.DomainException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.doReturn;
 import com.inditex.utils.TestUtils;
 
-public class GetPriceTest {
+public class GetPriceImplTest {
 
     @Mock
     PriceRepository priceRepository;
@@ -27,7 +27,7 @@ public class GetPriceTest {
     @BeforeEach
     void setup() {
         MockitoAnnotations.openMocks(this);
-        getPrice = new GetPrice(priceRepository);
+        getPrice = new GetPriceImpl(priceRepository);
     }
 
     @Test

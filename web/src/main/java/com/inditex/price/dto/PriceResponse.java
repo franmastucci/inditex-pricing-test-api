@@ -42,7 +42,7 @@ public class PriceResponse {
     /** The endDate. */
     private Date endDate;
 
-    /** The finalPrice. */
-    private BigDecimal finalPrice;
+    /** The priceValue. */
+    private BigDecimal priceValue;
 
 }

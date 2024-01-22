@@ -31,13 +31,13 @@ class ErrorHandlingControllerAdvice {
         if (e instanceof InfraException) {
             if (((InfraException) e).getCode().equals("500")) {
                 var errors = new ErrorListMessageDTO();
-                errors.setErrors(Collections.singletonList(new ErrorMessageDTO("500", "SERVER ERROR", null, e.getMessage())));
+                errors.setErrors(Collections.singletonList(new ErrorMessageDTO("500",  e.getMessage())));
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errors);
             }
         }
 
         var errors = new ErrorListMessageDTO();
-        errors.setErrors(Collections.singletonList(new ErrorMessageDTO("400", "BAD REQUEST", null, e.getMessage())));
+        errors.setErrors(Collections.singletonList(new ErrorMessageDTO("400", e.getMessage())));
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
     }
@@ -47,7 +47,7 @@ class ErrorHandlingControllerAdvice {
     @ResponseBody
     ErrorListMessageDTO onInternalServerException(RuntimeException e) throws Exception {
         var errors = new ErrorListMessageDTO();
-        errors.setErrors(Collections.singletonList(new ErrorMessageDTO("500","INTERNAL ERROR", null,e.getMessage())));
+        errors.setErrors(Collections.singletonList(new ErrorMessageDTO("500",e.getMessage())));
         return  errors;
     }
 

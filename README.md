@@ -3,13 +3,11 @@
 # [Inditex Pricing Test API](https://github.com/franmastucci/inditex-pricing-test-api)
 #### Price retrieval service in a testing context for the company Inditex.
 #### Author: [Francisco Mastucci Silva](https://www.linkedin.com/in/franmastucci/).
-
 <br>
 
 ## Overview
-
-<b>The Inditex Pricing Test API is a microservice designed using the Hexagonal Architecture, tailored for the specific needs of the Spanish company Inditex. This microservice aims to fulfill the technical assessment requirements within the context of the selection process.
-
+<b>
+The Inditex Pricing Test API is a microservice designed using the Hexagonal Architecture, tailored for the specific needs of the Spanish company Inditex. This microservice aims to fulfill the technical assessment requirements within the context of the selection process.
 The architecture of the Inditex Pricing Test API is built upon archetypes, patterns, and practices that the developer has accumulated throughout their professional journey, working with differents companies. Therefore, both the architecture itself and the underlying semantics represent just one approach to harnessing the benefits of a Hexagonal Architecture.
 </b>
 <br>
@@ -17,23 +15,20 @@ The architecture of the Inditex Pricing Test API is built upon archetypes, patte
 ## Components
 The microservice is structured into three main components:
 
-
-### 1. Core:
-
+### [1. Core](core/src/main/java/com/inditex/price/application/impl/GetPriceImpl.java)
 The Core component encapsulates the application's domain. It implements the business logic and exposes ports for interaction with other components. In this component, the essence of the application's domain is captured.
 
 
-### 2. Infra:
-
+### [2. Infra](infra/src/main/java/com/inditex/price/adapter/PriceRepositoryImpl.java)
 The Infra component is responsible for implementing the infrastructure while adhering to the definitions provided by the Core component. It translates the high-level abstractions of the Core into concrete implementations, managing data access, and external interactions.
 
-### 3. Web:
+
+### [3. Web](web/src/main/java/com/inditex/price/controller/PriceController.java)
 The Web component serves as the entry point for external interactions. It exposes web resources that allow clients to invoke the services provided by the microservice. This component acts as the interface between the microservice and external systems
 
 
 ## Why Hexagonal Architecture?
 The choice of a Hexagonal Architecture for the Inditex Pricing Test API is driven by several considerations:
-
 
 1. **Separation of Concerns:**
    Hexagonal Architecture enforces a clear separation between the business logic and external concerns, making the system more modular and maintainable.
@@ -69,7 +64,7 @@ mvn test
 #### **[H2 Console access](http://localhost:8080/h2-console)**.
 
 
-![](web/etc/images/prices_model.png)
+![](web/etc/images/prices.drawio.png)
 ## API Endpoints
 #### [Swagger access](http://localhost:8080/swagger-ui/index.html#/).
 
@@ -78,18 +73,15 @@ mvn test
 |:------------------------------------------------------------|:-----|:------------------------------------------------------------|
 | /prices?product={product_id}&brand={brand_name}&date={date} | GET  | Retrieves prices for a specific product and brand at a given date and time |
 #### Invoking the Price service:
+
+The service can be invoked using a client URL command as illustrated below.
 ```curl
 curl --location 'http://localhost:8080/prices?product=35455&brand=ZARA&date=2020-06-16%2021:00:00'
 ```
 
-<br>
-
-
-
-
-
-
-
+####  Using Postman 
+Also the API endpoint can be tested by running http calls with Postman. Use this 
+[Collection](web/etc/postman/inditex.postman_collection.json)  to  import this in a Postman enviroment.
 
 ## Technology
 * **Platform:** Java 11

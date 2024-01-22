@@ -9,15 +9,13 @@ import java.io.Serializable;
 /**
  * The Class ErrorMessageDTO.
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
+
 @Schema(name = "Error", description = "ErrorMessageDTO data")
-@Getter
-@Setter
-@EqualsAndHashCode(callSuper = false)
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class ErrorMessageDTO implements Serializable {
-
 
     /** The code. */
     private String code;
@@ -25,19 +23,4 @@ public class ErrorMessageDTO implements Serializable {
     /** The description. */
     private String description;
 
-    /** The level. */
-    private String level;
-
-    /** The message. */
-    private String message;
-
-    @Override
-    public String toString() {
-        return "ErrorMessageDTO{" +
-                "code='" + code + '\'' +
-                ", description='" + description + '\'' +
-                ", level='" + level + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }
