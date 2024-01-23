@@ -13,6 +13,7 @@ import java.util.Optional;
  */
 public interface PriceJPARepository extends JpaRepository<PriceEntity, Integer> {
 
+
     /**
      * Searches and returns the {@link PriceEntity} entity with the highest priority
      * for a given brand, product, and date.
@@ -23,6 +24,7 @@ public interface PriceJPARepository extends JpaRepository<PriceEntity, Integer> 
      * @return An {@link Optional} containing the {@link PriceEntity} entity with the highest priority,
      *         or an empty container if no entity is found that meets the criteria.
      */
+
     @Query(value = "SELECT * FROM PRICES P " +
             "JOIN BRANDS B ON B.BRAND_ID = P.BRAND_ID " +
             "WHERE B.NAME = :brandName " +

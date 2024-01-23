@@ -19,11 +19,12 @@ The microservice is structured into three main components:
 The Core component encapsulates the application's domain. It implements the business logic and exposes ports for interaction with other components. In this component, the essence of the application's domain is captured.
 
 
+
 ### [2. Infra](infra/src/main/java/com/inditex/price/adapter/PriceRepositoryImpl.java)
 The Infra component is responsible for implementing the infrastructure while adhering to the definitions provided by the Core component. It translates the high-level abstractions of the Core into concrete implementations, managing data access, and external interactions.
 
 
-### [3. Web](web/src/main/java/com/inditex/price/controller/PriceController.java)
+### [3. Web](web/src/main/java/com/inditex/price/adapter/PriceController.java)
 The Web component serves as the entry point for external interactions. It exposes web resources that allow clients to invoke the services provided by the microservice. This component acts as the interface between the microservice and external systems
 
 
@@ -81,7 +82,7 @@ curl --location 'http://localhost:8080/prices?product=35455&brand=ZARA&date=2020
 
 ####  Using Postman 
 Also the API endpoint can be tested by running http calls with Postman. Use this 
-[Collection](web/etc/postman/inditex.postman_collection.json)  to  import this in a Postman enviroment.
+[Collection](web/etc/postman/inditex.postman_collection.json)  to  import in a Postman enviroment.
 
 ## Technology
 * **Platform:** Java 11

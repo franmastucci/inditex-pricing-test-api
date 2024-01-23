@@ -7,13 +7,13 @@ info:
 host: localhost:8090
 basePath: "/"
 tags:
-  - name: price-controller
+  - name: price-adapter
     description: Price Controller
 paths:
   "/prices":
     get:
       tags:
-        - price-controller
+        - price-adapter
       summary: find the max priority price
       operationId: getPriceUsingGET
       produces:

@@ -1,4 +1,4 @@
-package com.inditex.price.controller;
+package com.inditex.price.adapter;
 
 import com.inditex.price.application.GetPrice;
 import com.inditex.price.dto.PriceResponse;

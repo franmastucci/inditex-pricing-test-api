@@ -1,4 +1,4 @@
-package com.inditex.price.controller;
+package com.inditex.price.adapter;
 
 import com.inditex.shared.AbstractContainerBaseTest;
 import org.hamcrest.Matchers;
